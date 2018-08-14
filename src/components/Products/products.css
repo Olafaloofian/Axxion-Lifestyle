@@ -1,0 +1,38 @@
+.exercise-products {
+  background-image: url(./media/barbell.jpg); }
+
+.wellness-products {
+  background-image: url(./media/yoga.jpg); }
+
+.nutrition-products {
+  background-image: url(./media/diet.jpg); }
+
+.product-main {
+  padding: 30px; }
+
+.products-container {
+  background: #ffe603; }
+
+.products-main {
+  width: 80%;
+  background: white;
+  margin: 0 auto; }
+
+.product-selection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%; }
+
+hr {
+  margin: 0; }
+
+.selector-button {
+  margin: 0 0 0 15px;
+  padding: 0;
+  font-size: 12px; }
+
+.selector-button:active {
+  padding: 1px; }

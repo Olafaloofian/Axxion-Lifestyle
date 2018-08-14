@@ -1,0 +1,30 @@
+.cheers-container {
+  margin: 30px auto;
+  text-indent: 0; }
+  .cheers-container .cheer-text {
+    font-size: 30px; }
+  .cheers-container .cheers-body {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 30vw;
+    margin: 0 auto; }
+    .cheers-container .cheers-body .cheers-number {
+      font-size: 30px;
+      text-align: right;
+      flex: 1; }
+    .cheers-container .cheers-body #cheer-icon {
+      flex: 1; }
+
+#confetti {
+  pointer-events: none;
+  margin: 0 auto;
+  background: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100%; }

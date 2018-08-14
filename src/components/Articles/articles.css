@@ -1,0 +1,132 @@
+#separator {
+  height: 20px;
+  background: #FFCC00; }
+
+.category {
+  height: 33vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto 200%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; }
+
+.fitness {
+  background-image: url(./media/fitness.jpg); }
+
+.category-master {
+  max-width: 900px;
+  min-width: 50%;
+  margin: 0 auto; }
+
+.wellness {
+  background-image: url(./media/wellness.jpg); }
+
+.nutrition {
+  background-image: url(./media/Nutrition.jpg); }
+
+.category-container {
+  background: #ffe603;
+  padding: 0 2%; }
+
+.background {
+  background: #FFCC00;
+  width: 80vw;
+  min-height: 90vh;
+  padding: 20px 0;
+  margin: 0 auto; }
+
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  margin: 20px auto; }
+  .article .title {
+    padding: 7px;
+    width: 400px;
+    background: rgba(70, 70, 70, 0.658);
+    flex: 1;
+    position: absolute; }
+  .article .vidoc {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .article .vidoc #video {
+      position: absolute;
+      flex: 3; }
+
+.article-title {
+  width: 100vw;
+  font-weight: 500;
+  font-size: 40px;
+  padding: 50px;
+  background: #FFFF66;
+  color: #FF9900; }
+
+.article-body {
+  width: 80vw;
+  margin: 20px auto;
+  font-size: 16px;
+  text-align: left;
+  text-indent: 30px; }
+  .article-body img {
+    margin: 20px auto;
+    width: 100%;
+    height: 100%;
+    max-width: 700px; }
+  .article-body blockquote {
+    text-align: center;
+    color: #FF9900;
+    font-weight: 500;
+    font-size: 35px;
+    margin: 20px 0; }
+  .article-body p {
+    text-align: left; }
+  .article-body ul, .article-body ol {
+    margin-left: 40px;
+    list-style-type: circle; }
+
+.social-container {
+  text-align: center; }
+  .social-container img {
+    width: 100%;
+    max-width: 100px; }
+
+.inner-box {
+  background: rgba(70, 70, 70, 0.658);
+  padding: 20px;
+  color: white;
+  font-size: 29px;
+  font-weight: 500; }
+
+@media (max-width: 900px) {
+  .article-container {
+    padding: 0; }
+  .category {
+    height: 35vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 150%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .fitness {
+    background-image: url(./media/fitness.jpg); }
+  .wellness {
+    background-image: url(./media/wellness.jpg); }
+  .nutrition {
+    background-image: url(./media/Nutrition.jpg); }
+  .category-container {
+    background: #ffe603;
+    padding: 0; }
+    .category-container .category-master {
+      max-width: 738px;
+      margin: 0 auto; } }

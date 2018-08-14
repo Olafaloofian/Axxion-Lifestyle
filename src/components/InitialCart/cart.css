@@ -1,0 +1,40 @@
+.cart-container {
+  min-height: 80vh;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffe603; }
+
+.empty {
+  min-height: 100vh; }
+
+.cart-master {
+  background: white;
+  margin: 0 auto;
+  width: 70%;
+  height: 100vh; }
+
+.cart-item {
+  margin-top: 15px; }
+  .cart-item button {
+    margin-bottom: 15px; }
+  .cart-item span {
+    margin: 0 15px; }
+
+.saved-address hr {
+  margin: 15px auto; }
+
+.shipping-info {
+  margin: 15px auto; }
+
+.stripey {
+  font-size: 21px;
+  color: #6773e6;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0 0 0; }
+  .stripey img {
+    width: 60px;
+    margin: 0 8px; }

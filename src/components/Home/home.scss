@@ -1,0 +1,95 @@
+.home-container div {
+    // min-height: 200px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    cursor: auto;
+}
+
+// .padding{
+//     height: 80px;
+// }
+
+
+a {
+    text-decoration: none;
+}
+
+.separator{
+    height: 20px;
+    background: #FFCC00;
+}
+
+
+// @media (max-width: 900px) {
+    .axxion-header{
+        background-image: url(./media/climbing.jpg);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: 110% auto;
+        min-height: 45%;
+    }
+    .axxion-container{
+        z-index: 2;
+        min-width: 100%;
+        min-height: 40%;
+        %axxion-image {
+            width: 100%;
+            height: 33vh;
+            background-image: url(./media/Axxion-header-2.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 90% auto;
+        }
+        .noimage {
+            opacity: 0;
+            @extend %axxion-image
+        }
+        .image {
+            opacity: 1;
+            transition: 0.7s ease-in;
+            @extend %axxion-image
+        }
+    }
+    .carousel-container{
+        position: relative;
+        cursor: pointer;
+        .carousel-image{
+            height: 30vh;
+        }
+        .inner-box{
+            position: absolute;
+            background: rgba(70, 70, 70, 0.658);
+            padding: 20px;
+            div{
+                position: relative;
+                width: 100px;
+                min-height: 30px;
+                color: white;
+                font-size: 29px;
+                font-weight: 500;
+            }
+        }
+    }
+    .flavor-text-container{
+        min-height: 10vh;
+        background: #FFCC00;
+        div {
+            color: white;
+            font-size: 40px;
+            font-weight: 500;
+        }
+    }
+
+// }
+
+@media(min-width: 900px) {
+    .axxion-header{
+        background-image: url(./media/climbing.jpg);
+        background-repeat: no-repeat;
+        background-position: 0 center;
+        background-size: 100% auto;
+        min-height: 45%;
+    }
+}
