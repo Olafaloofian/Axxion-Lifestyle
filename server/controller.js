@@ -195,7 +195,6 @@ module.exports = {
         })
     },
 
-
     getProducts(req, res) {
         const dbInstance = req.app.get('db')
         const { category } = req.params

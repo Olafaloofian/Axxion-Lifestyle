@@ -7,7 +7,7 @@ const axios = require('axios')
 const controller = require('./controller')
 const configureStripe = require('stripe')
 const articlesController = require('./articlesController')
-const middlewares = require('./middlwares')
+const middleware = require('./middlwares')
 
 const SECRET_KEY = process.env.STRIPE_SECRET
 
@@ -49,9 +49,9 @@ app.get('/api/articles/:category', articlesController.getCategories)
 app.get('/api/article', articlesController.getLimitedArticle)
 app.get('/api/article/:urlTitle', articlesController.getArticle)
 app.get('/api/comments', controller.getComments)
-app.post('/api/comment', middlewares.filterComment, controller.createComment)
+app.post('/api/comment', middleware.filterComment, controller.createComment)
 app.delete('/api/comment', controller.deleteComment)
-app.put('/api/comment', middlewares.filterComment, controller.updateComment)
+app.put('/api/comment', middleware.filterComment, controller.updateComment)
 app.get('/api/cheers', controller.getCheers)
 app.post('/api/cheers', controller.newCheer)
 
@@ -78,7 +78,7 @@ app.post('/api/guest', controller.newGuest)
 app.post('/api/address', controller.newAddress)
 app.post('/api/address/save', controller.saveAddress)
 app.get('/api/address', controller.getAddress)
-app.post('/api/user', middlewares.filterBio, (req, res) => {
+app.post('/api/user', middleware.filterBio, (req, res) => {
     const {new_first_name, new_last_name, new_email, new_username, new_picture, new_bio, new_address, auth0_id} = req.body
     const dbInstance = req.app.get('db')
     console.log('------------ req.body', req.body)
