@@ -55,13 +55,11 @@ a {
 
 .flavor-text-container {
   min-height: 10vh;
-  background: #FFCC00; 
-}
+  background: #FFCC00; }
   .flavor-text-container div {
     color: white;
     font-size: 40px;
-    font-weight: 500; 
-  }
+    font-weight: 500; }
 
 @media (min-width: 900px) {
   .axxion-header {

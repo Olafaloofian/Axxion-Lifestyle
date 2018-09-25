@@ -103,102 +103,46 @@ class Shipping extends Component {
     render() {
         console.log('------------ this.props', this.props)
         if(this.props.cart.length) {
-            if(this.props.login) {
-                if(this.state.savedAddresses.length) {
-                    return(
-                        <div className='saved-address'>
-                            {this.state.savedAddresses.map(address => {
-                            return(
-                                <div key={address.id} className='saved-address'>
-                                    <div>{address.first_name} {address.last_name}</div>
-                                    <div>{address.address_line_one}</div>
-                                    <div>{address.address_line_two}</div>
-                                    <div>{address.city}</div>
-                                    <div>{address.state}</div>
-                                    <div>{address.zipcode}</div>
-                                    <div><input type="checkbox" onChange={() => this.setState({selectedAddress: address})}/> Ship to this address</div>
-                                    <hr/>
-                                </div>
-                                )})}
-                                <div>Final step: <button onClick={() => this.clicky()}>Review Order</button></div>
-                                <div><button onClick={() => this.setState({savedAddresses: ''})}>Ship to Other Address</button></div>
-                        </div>
-                    )
-                } else {
-                    return(
-                        <div>
-                            <div><input type="text" placeholder="Address Line 1" onChange={(e) => this.updateState('addressLine1', e.target.value)}/></div>
-                            <div><input type="text" placeholder="Address Line 2" onChange={(e) => this.updateState('addressLine2', e.target.value)}/></div>
-                            <div><input type="text" placeholder="City" onChange={(e) => this.updateState('city', e.target.value)}/></div>
-                            <div><select onChange={(e) => this.updateState('state', e.target.value)}>
-                                <option value='State'>State</option>
-                                <option value='AL'>Alabama</option>
-                                <option value='AK'>Alaska</option>
-                                <option value='AZ'>Arizona</option>
-                                <option value='AR'>Arkansas</option>
-                                <option value='CA'>California</option>
-                                <option value='CO'>Colorado</option>
-                                <option value='CT'>Connecticut</option>
-                                <option value='DE'>Delaware</option>
-                                <option value='DC'>District Of Columbia</option>
-                                <option value='FL'>Florida</option>
-                                <option value='GA'>Georgia</option>
-                                <option value='HI'>Hawaii</option>
-                                <option value='ID'>Idaho</option>
-                                <option value='IL'>Illinois</option>
-                                <option value='IN'>Indiana</option>
-                                <option value='IA'>Iowa</option>
-                                <option value='KS'>Kansas</option>
-                                <option value='KY'>Kentucky</option>
-                                <option value='LA'>Louisiana</option>
-                                <option value='ME'>Maine</option>
-                                <option value='MD'>Maryland</option>
-                                <option value='MA'>Massachusetts</option>
-                                <option value='MI'>Michigan</option>
-                                <option value='MN'>Minnesota</option>
-                                <option value='MS'>Mississippi</option>
-                                <option value='MO'>Missouri</option>
-                                <option value='MT'>Montana</option>
-                                <option value='NE'>Nebraska</option>
-                                <option value='NV'>Nevada</option>
-                                <option value='NH'>New Hampshire</option>
-                                <option value='NJ'>New Jersey</option>
-                                <option value='NM'>New Mexico</option>
-                                <option value='NY'>New York</option>
-                                <option value='NC'>North Carolina</option>
-                                <option value='ND'>North Dakota</option>
-                                <option value='OH'>Ohio</option>
-                                <option value='OK'>Oklahoma</option>
-                                <option value='OR'>Oregon</option>
-                                <option value='PA'>Pennsylvania</option>
-                                <option value='RI'>Rhode Island</option>
-                                <option value='SC'>South Carolina</option>
-                                <option value='SD'>South Dakota</option>
-                                <option value='TN'>Tennessee</option>
-                                <option value='TX'>Texas</option>
-                                <option value='UT'>Utah</option>
-                                <option value='VT'>Vermont</option>
-                                <option value='VA'>Virginia</option>
-                                <option value='WA'>Washington</option>
-                                <option value='WV'>West Virginia</option>
-                                <option value='WI'>Wisconsin</option>
-                                <option value='WY'>Wyoming</option>
-                            </select></div>
-                            <div><input type="number" placeholder="Zipcode" onChange={(e) => this.updateState('zipcode', e.target.value)}/></div>
-                            <input type='checkbox' onChange={() => this.setState({saveAddress: !this.state.saveAddress})}/> Save this address
-                            <div>Final step: <button onClick={() => this.addAddress()}>Review Order</button></div>
-                        </div>
-                    )
-                } 
+            if(this.state.savedAddresses.length) {
+                return(
+                    <div className='saved-address'>
+                        {this.state.savedAddresses.map(address => {
+                        return(
+                            <div key={address.id} className='saved-address'>
+                                <div>{address.first_name} {address.last_name}</div>
+                                <div>{address.address_line_one}</div>
+                                <div>{address.address_line_two}</div>
+                                <div>{address.city}</div>
+                                <div>{address.state}</div>
+                                <div>{address.zipcode}</div>
+                                <div><input type="checkbox" onChange={() => this.setState({selectedAddress: address})}/> Ship to this address</div>
+                                <hr/>
+                            </div>
+                            )})}
+                            <div>Final step: <button onClick={() => this.clicky()}>Review Order</button></div>
+                            <div><button onClick={() => this.setState({savedAddresses: ''})}>Ship to Other Address</button></div>
+                    </div>
+                )
             } else {
-                return (
+                return(
                     <div>
-                        <div><input type="text" placeholder="First Name" onChange={(e) => this.updateState('firstName', e.target.value)}/></div>
-                        <div><input type="text" placeholder="Last Name" onChange={(e) => this.updateState('lastName', e.target.value)}/></div>
-                        <div><input type="text" placeholder="Email" onChange={(e) => this.updateState('email', e.target.value)}/></div>
-                        <div><input type="text" placeholder="Address Line 1" onChange={(e) => this.updateState('addressLine1', e.target.value)}/></div>
-                        <div><input type="text" placeholder="Address Line 2" onChange={(e) => this.updateState('addressLine2', e.target.value)}/></div>
-                        <div><input type="text" placeholder="City" onChange={(e) => this.updateState('city', e.target.value)}/></div>
+                        {this.props.login? 
+                            <div>
+                                <div><input type="text" placeholder="Address Line 1" onChange={(e) => this.updateState('addressLine1', e.target.value)}/></div>
+                                <div><input type="text" placeholder="Address Line 2" onChange={(e) => this.updateState('addressLine2', e.target.value)}/></div>
+                                <div><input type="text" placeholder="City" onChange={(e) => this.updateState('city', e.target.value)}/></div>
+                            </div>
+                            :
+                            <div>
+                                <div><input type="text" placeholder="First Name" onChange={(e) => this.updateState('firstName', e.target.value)}/></div>
+                                <div><input type="text" placeholder="Last Name" onChange={(e) => this.updateState('lastName', e.target.value)}/></div>
+                                <div><input type="text" placeholder="Email" onChange={(e) => this.updateState('email', e.target.value)}/></div>
+                                <div><input type="text" placeholder="Address Line 1" onChange={(e) => this.updateState('addressLine1', e.target.value)}/></div>
+                                <div><input type="text" placeholder="Address Line 2" onChange={(e) => this.updateState('addressLine2', e.target.value)}/></div>
+                                <div><input type="text" placeholder="City" onChange={(e) => this.updateState('city', e.target.value)}/></div>
+                            </div>
+                        }
+
                         <div><select onChange={(e) => this.updateState('state', e.target.value)}>
                             <option value='State'>State</option>
                             <option value='AL'>Alabama</option>
@@ -254,10 +198,16 @@ class Shipping extends Component {
                             <option value='WY'>Wyoming</option>
                         </select></div>
                         <div><input type="number" placeholder="Zipcode" onChange={(e) => this.updateState('zipcode', e.target.value)}/></div>
-                        <div>Final step: <button onClick={() => this.makeGuest()}>Review Order</button></div>
+                        {this.props.login && 
+                            <div>
+                                <input type='checkbox' onChange={() => this.setState({saveAddress: !this.state.saveAddress})}/> 
+                                <span>Save this address</span>
+                            </div>
+                        }
+                        <div>Final step: <button onClick={() => this.addAddress()}>Review Order</button></div>
                     </div>
                 )
-            }
+            } 
         } else {
             return (
                 <div>

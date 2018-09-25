@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './profile.css'
-import { updateLogin, updateUser, clearUser } from '../../ducks/reducer'
+import { updateLogin, updateUser, clearUser, clearCart } from '../../ducks/reducer'
 import { connect } from 'react-redux'
 import RecentActivity from './RecentActivity';
 
@@ -136,6 +136,7 @@ class Profile extends Component {
 
     logOut = () => {
         axios.post('/api/user/logout').then(res => {
+            this.props.clearCart()
             this.props.history.push('/')
             this.props.updateLogin(false)
             this.props.clearUser()
@@ -234,4 +235,4 @@ const mapStateToProps = (store) => {
     }
 }
 
-export default connect(mapStateToProps, {updateLogin, updateUser, clearUser})(Profile)
+export default connect(mapStateToProps, {updateLogin, updateUser, clearUser, clearCart})(Profile)

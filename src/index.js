@@ -6,15 +6,26 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './ducks/store'
-// import { connect } from 'react-redux'
+import { AppContainer } from 'react-hot-loader';
 
-ReactDOM.render(<Provider store={store}><Router><App /></Router></Provider>, document.getElementById('root'));
+
+const render = () => {
+    ReactDOM.render(
+        <AppContainer>
+            <Provider store={store}>
+                <Router>
+                    <App />
+                </Router>
+            </Provider>
+        </AppContainer>, 
+    document.getElementById('root'));
 registerServiceWorker();
+}
 
-// const mapStateToProps = (store) => {
-//     return {
-//         login: store.login
-//     }
-// }
+render()
 
-// connect(mapStateToProps)
+if (module.hot) {
+    module.hot.accept('./App', () => {
+        render();
+    });
+}

@@ -58,57 +58,56 @@ class Header extends Component {
     }
 
     render() {
-        console.log('------------ this.props.cart', this.props.cart)
-            return(
-                <div className="header_container">
-                    <div className="header_background">
-                    { this.props.login ? 
-                    <Link to='/profile'>
-                        <div className='mini-profile'>
-                            <div className="image-container">
-                                <img src={this.props.user.picture} width='65' alt="Profile"/>
-                            </div>
-                            {this.props.user.username} 
+        console.log('------------ this.props', this.props)
+        return(
+            <div className="header_container">
+                <div className="header_background">
+                { this.props.login ? 
+                <Link to='/profile'>
+                    <div className='mini-profile'>
+                        <div className="image-container">
+                            <img src={this.props.user.picture} width='65' alt="Profile"/>
                         </div>
-                    </Link>
-                    :
-                    <Link to='/'>
-                        <img onClick={() => this.setState({ toggleMenu: false })} src={logo} alt="Axxion" className="logo"/>
-                    </Link>
-                    }
-                    <div className="menu" onClick={() => this.setState({ toggleMenu: !this.state.toggleMenu, cartIndicator: false })}>
-                        <div className={this.state.toggleMenu ? 'menux1' : "menuline1"}></div>
-                        <div className={this.state.toggleMenu ? 'menux2' : "menuline2"}></div>
-                        <div className={this.state.toggleMenu ? 'menux3' : "menuline3"}></div>
-                            {this.props.cart.length ? 
-                                this.state.cartIndicator &&
-                                    <div className='cart-indicator-menu'>{this.state.totalQty}</div>
-                            :
-                            null}
+                        {this.props.user.username} 
                     </div>
-                        <div className={this.state.toggleMenu ? "menulist open" : "menulist"}>
-                            {this.props.login ?
-                                <Link to='/profile'><div onClick={() => this.setState({ toggleMenu: false })}>Profile</div></Link>
-                                :
-                                <div className='login-portal' onClick={() => this.login()}>Login</div>
-                            }
-                            <Link to='/'><div onClick={() => this.setState({ toggleMenu: false })}>Home</div></Link>
-                            <Link to='/articles'><div onClick={() => this.setState({ toggleMenu: false })}>Articles</div></Link>
-                            <Link to='/products'><div onClick={() => this.setState({ toggleMenu: false })}>Products</div></Link>
-                            <Link to='/about'><div onClick={() => this.setState({ toggleMenu: false })}>Contact</div></Link>
-                            <Link to='/about'><div onClick={() => this.setState({ toggleMenu: false })}>About</div></Link>
-                            {this.props.cart.length ? 
-                            <Link to='/cart'><div className='cart' onClick={() => this.setState({ toggleMenu: false })}>Cart<div className='cart-indicator'>{this.state.totalQty}</div></div></Link>
+                </Link>
+                :
+                <Link to='/'>
+                    <img onClick={() => this.setState({ toggleMenu: false })} src={logo} alt="Axxion" className="logo"/>
+                </Link>
+                }
+                <div className="menu" onClick={() => this.setState({ toggleMenu: !this.state.toggleMenu, cartIndicator: false })}>
+                    <div className={this.state.toggleMenu ? 'menux1' : "menuline1"}></div>
+                    <div className={this.state.toggleMenu ? 'menux2' : "menuline2"}></div>
+                    <div className={this.state.toggleMenu ? 'menux3' : "menuline3"}></div>
+                        {this.props.cart.length ? 
+                            this.state.cartIndicator &&
+                                <div className='cart-indicator-menu'>{this.state.totalQty}</div>
+                        :
+                        null}
+                </div>
+                    <div className={this.state.toggleMenu ? "menulist open" : "menulist"}>
+                        {this.props.login ?
+                            <Link to='/profile'><div onClick={() => this.setState({ toggleMenu: false })}>Profile</div></Link>
                             :
-                            null
-                            }
-                            <div className='hamburger' onClick={() => this.setState({ toggleMenu: false })}>
-                            </div>
+                            <div className='login-portal' onClick={() => this.login()}>Login</div>
+                        }
+                        <Link to='/'><div onClick={() => this.setState({ toggleMenu: false })}>Home</div></Link>
+                        <Link to='/articles'><div onClick={() => this.setState({ toggleMenu: false })}>Articles</div></Link>
+                        <Link to='/products'><div onClick={() => this.setState({ toggleMenu: false })}>Products</div></Link>
+                        <Link to='/about'><div onClick={() => this.setState({ toggleMenu: false })}>Contact</div></Link>
+                        <Link to='/about'><div onClick={() => this.setState({ toggleMenu: false })}>About</div></Link>
+                        {this.props.cart.length ? 
+                        <Link to='/cart'><div className='cart' onClick={() => this.setState({ toggleMenu: false })}>Cart<div className='cart-indicator'>{this.state.totalQty}</div></div></Link>
+                        :
+                        null
+                        }
+                        <div className='hamburger' onClick={() => this.setState({ toggleMenu: false })}>
                         </div>
                     </div>
                 </div>
-            )
-        // }
+            </div>
+        )
     }
 }
 
