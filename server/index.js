@@ -114,7 +114,7 @@ app.get('/auth/callback', (req, res) => {
         client_secret: process.env.AUTH0_CLIENT_SECRET,
         code: req.query.code,
         grant_type: 'authorization_code',
-        redirect_uri: `http://${req.headers.host}/auth/callback`
+        redirect_uri: `https://${req.headers.host}/auth/callback`
     }
     // Trading a token for an access code at Auth0
     function tradeCodeForAccessToken() {
