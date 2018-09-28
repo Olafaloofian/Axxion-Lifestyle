@@ -85,7 +85,7 @@ class Profile extends Component {
             alert('Last name can not contain spaces.')
             return null
         }
-        if(emailArray.includes(' ') || !emailArray.filter(e => e === '@').length || !emailArray.filter(e => e === '.').length) {
+        if(emailArray.includes(' ') || !emailArray.filter(e => e === '@').length === 1 || !emailArray.filter(e => e === '.').length) {
             alert('Please enter a valid email address.')
             return null
         }
