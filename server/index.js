@@ -135,7 +135,7 @@ app.get('/auth/callback', (req, res) => {
                 const user = users[0]
                 req.session.user = user // Using sessions with Auth0
                 // res.redirect(prevPath)
-                res.redirect('/')
+                res.redirect(prevPath)
                 console.log('------------ users', users)
                 console.log('------------ this.props', this.props)
             } else {
