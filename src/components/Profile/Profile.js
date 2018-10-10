@@ -64,7 +64,7 @@ class Profile extends Component {
         })
     }
 
-    updateState = (key, val) => {
+    handleChange = (key, val) => {
         this.setState({
             [key]: val
         })
@@ -156,13 +156,13 @@ class Profile extends Component {
                         <div className="profile_container">
                             <div className="profile_overview">
                                 <div><img src={new_picture} width="230" alt=""/></div>
-                                <div><input type='text' placeholder='Profile picture URL' value={this.state.new_picture} onChange={(e) => this.updateState('new_picture', e.target.value)}/></div>
-                                <div>First: <input type='text' value={this.state.new_first_name} placeholder={new_first_name} onChange={(e) => this.updateState('new_first_name', e.target.value)}/> Last: <input type='text' value={this.state.new_last_name} placeholder={new_last_name} onChange={(e) => this.updateState('new_last_name', e.target.value)}/></div>
-                                <div>Username: <input type='text' value={this.state.new_username} placeholder={username} onChange={(e) => this.updateState('new_username', e.target.value)}/></div>
-                                <div>Email:<input type='text' value={this.state.new_email} placeholder={new_email} onChange={(e) => this.updateState('new_email', e.target.value)} /></div>
+                                <div><input type='text' placeholder='Profile picture URL' value={this.state.new_picture} onChange={(e) => this.handleChange('new_picture', e.target.value)}/></div>
+                                <div>First: <input type='text' value={this.state.new_first_name} placeholder={new_first_name} onChange={(e) => this.handleChange('new_first_name', e.target.value)}/> Last: <input type='text' value={this.state.new_last_name} placeholder={new_last_name} onChange={(e) => this.handleChange('new_last_name', e.target.value)}/></div>
+                                <div>Username: <input type='text' value={this.state.new_username} placeholder={username} onChange={(e) => this.handleChange('new_username', e.target.value)}/></div>
+                                <div>Email:<input type='text' value={this.state.new_email} placeholder={new_email} onChange={(e) => this.handleChange('new_email', e.target.value)} /></div>
                             </div>
                             <div className="personal">
-                                {bio ? <div>Bio: <br/> {bio}</div> : <textarea placeholder='Type a short bio here!' onChange={(e) => this.updateState('new_bio', e.target.value)}></textarea>}
+                                {bio ? <div>Bio: <br/> {bio}</div> : <textarea placeholder='Type a short bio here!' onChange={(e) => this.handleChange('new_bio', e.target.value)}></textarea>}
                             </div>
                         </div>
                         <button className='update-button' onClick={() => this.updateProfile()}>Update Profile</button>
@@ -175,13 +175,13 @@ class Profile extends Component {
                             Edit Profile
                             <div className="profile_container">
                                 <div className="profile_overview">
-                                    <img src={new_picture} width="230" alt=""/> <div><input type='text' placeholder='Profile picture URL' onChange={(e) => this.updateState('new_picture', e.target.value)} value={this.state.new_picture}/></div>
-                                    <div>First Name: <input type="text" placeholder={first_name} onChange={(e) => this.updateState('new_first_name', e.target.value)} value={this.state.new_first_name}/> Last Name: <input type="text" placeholder={last_name} onChange={(e) => this.updateState('new_last_name', e.target.value)}value={this.state.new_last_name}/></div>
-                                    <div>Username: <input type='text' placeholder={username} onChange={(e) => this.updateState('new_username', e.target.value)} value={this.state.new_username}/></div>
-                                    <div>Email: <input type='text' placeholder={email} onChange={(e) => this.updateState('new_email', e.target.value)} value={this.state.new_email}/></div>
+                                    <img src={new_picture} width="230" alt=""/> <div><input type='text' placeholder='Profile picture URL' onChange={(e) => this.handleChange('new_picture', e.target.value)} value={this.state.new_picture}/></div>
+                                    <div>First Name: <input type="text" placeholder={first_name} onChange={(e) => this.handleChange('new_first_name', e.target.value)} value={this.state.new_first_name}/> Last Name: <input type="text" placeholder={last_name} onChange={(e) => this.handleChange('new_last_name', e.target.value)}value={this.state.new_last_name}/></div>
+                                    <div>Username: <input type='text' placeholder={username} onChange={(e) => this.handleChange('new_username', e.target.value)} value={this.state.new_username}/></div>
+                                    <div>Email: <input type='text' placeholder={email} onChange={(e) => this.handleChange('new_email', e.target.value)} value={this.state.new_email}/></div>
                                 </div>
                                 <div className="personal">
-                                    <div> Bio: <br/> <textarea placeholder={bio} onChange={(e) => this.updateState('new_bio', e.target.value)} value={this.state.new_bio}></textarea></div>
+                                    <div> Bio: <br/> <textarea placeholder={bio} onChange={(e) => this.handleChange('new_bio', e.target.value)} value={this.state.new_bio}></textarea></div>
                                 </div>
                             </div>
                             <button className='update-button' onClick={() => this.updateProfile()}>Save Changes</button>
